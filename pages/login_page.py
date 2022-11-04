@@ -1,5 +1,6 @@
 from selenium.webdriver.common.by import By
 
+
 class LoginPage:
 
     __username=(By.ID,"username")
