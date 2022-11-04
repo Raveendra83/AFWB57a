@@ -3,6 +3,7 @@ import time
 from generic.base_test import BaseTest
 from generic.utility import Excel
 from pages.login_page import LoginPage
+from pages.home_page import HomePage
 class TestValidLogin(BaseTest):
 
     def test_validlogin(self):
@@ -14,6 +15,9 @@ class TestValidLogin(BaseTest):
         # 3. click on login button
         loginpage.click_loginbutton()
         # 4. verify that home page is displayed
-        time.sleep(5)
+        homepage=HomePage(self.driver)
+        result=homepage.verify_homepage_is_displayed(self.wait)
+        assert result
+
 
 
